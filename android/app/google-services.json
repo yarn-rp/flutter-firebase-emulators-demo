@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1075848930843",
+    "project_id": "flutter-emulators-demo",
+    "storage_bucket": "flutter-emulators-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075848930843:android:7006c4a82b1b0094f83abe",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.flutter_firebase_emulators_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_I_Mi09PPWux3tEb44ILYnMHdhGQpQS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

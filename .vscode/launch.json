@@ -5,6 +5,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch local",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart",
+      "args": [
+        "--flavor",
+        "development",
+        "--target",
+        "lib/main_development.dart",
+        "--dart-define-from-file",
+        "/Users/yanrodriguez/Documents/work/VGV/firebase-boilerplate-backend/firebase.json"
+      ]
+    },
+    {
       "name": "Launch development",
       "request": "launch",
       "type": "dart",
