@@ -39,18 +39,13 @@ Future<void> setupFirebaseEmulators(
 ) async {
   const emulatorsConfigString = String.fromEnvironment('emulators');
 
-  log('Emulators config: $emulatorsConfigString');
   if (emulatorsConfigString.isEmpty) {
     log('No emulators configuration found. Skipping firebase config setup...');
-    return Future.value();
+    return;
   }
 
   final (:authAddress, :firestoreAddress, :functionsAddress) =
       _parseEmulatorsConfig(emulatorsConfigString);
-
-  log('Auth emulator: $authAddress');
-  log('Firestore emulator: $firestoreAddress');
-  log('Functions emulator: $functionsAddress');
 
   await auth.useAuthEmulator(authAddress.host, authAddress.port);
   firestore.useFirestoreEmulator(firestoreAddress.host, firestoreAddress.port);
