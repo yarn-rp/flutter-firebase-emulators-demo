@@ -9,7 +9,7 @@ import 'package:flutter_firebase_emulators_demo/app/app.dart';
 import 'package:flutter_firebase_emulators_demo/bootstrap.dart';
 import 'package:flutter_firebase_emulators_demo/emulators_config.dart';
 import 'package:flutter_firebase_emulators_demo/firebase_options.dart';
-import 'package:platforms_repository/platforms_repository.dart';
+import 'package:test_repository/test_repository.dart';
 
 void main() async {
   // ... Initialize all your services here regularly
@@ -26,10 +26,10 @@ void main() async {
     await setupFirebaseEmulators(auth, firestore, functions);
   }
 
-  final platformsRepository = PlatformsRepository(firestore: firestore);
+  final testsRepository = TestRepository(firestore: firestore);
   return bootstrap(
     () => RepositoryProvider(
-      create: (context) => platformsRepository,
+      create: (context) => testsRepository,
       child: const App(),
     ),
   );

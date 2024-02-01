@@ -3,7 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:platforms_repository/platforms_repository.dart';
+import 'package:test_repository/test_repository.dart';
 
 class _MockFirestore extends Mock implements FirebaseFirestore {}
 
@@ -12,7 +12,7 @@ class _MockCollectionReference<T> extends Mock
     implements CollectionReference<T> {}
 
 void main() {
-  group('PlatformsRepository', () {
+  group('TestRepository', () {
     late FirebaseFirestore firestore;
 
     setUp(() {
@@ -20,19 +20,19 @@ void main() {
       final collectionReference =
           _MockCollectionReference<Map<String, dynamic>>();
 
-      final platformCollectionReference = _MockCollectionReference<Platform>();
+      final testCollectionReference = _MockCollectionReference<TestData>();
 
       when(() => firestore.collection(any())).thenReturn(collectionReference);
       when(
-        () => collectionReference.withConverter<Platform>(
+        () => collectionReference.withConverter<TestData>(
           fromFirestore: any(named: 'fromFirestore'),
           toFirestore: any(named: 'toFirestore'),
         ),
-      ).thenReturn(platformCollectionReference);
+      ).thenReturn(testCollectionReference);
     });
 
     test('can be instantiated', () {
-      expect(PlatformsRepository(firestore: firestore), isNotNull);
+      expect(TestRepository(firestore: firestore), isNotNull);
     });
   });
 }

@@ -19,8 +19,8 @@ dependencies:
     sdk: flutter
   intl: ^0.18.0
   meta: ^1.9.1
-  platforms_repository:
-    path: ./packages/platforms_repository
+  test_repository:
+    path: ./packages/test_repository
 
 dev_dependencies:
   bloc_test: ^9.1.2

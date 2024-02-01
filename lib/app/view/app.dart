@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_emulators_demo/l10n/l10n.dart';
-import 'package:flutter_firebase_emulators_demo/platforms/platforms.dart';
+import 'package:flutter_firebase_emulators_demo/test_feature/test_feature.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const PlatformsPage(),
+      home: const TestFeaturePage(),
     );
   }
 }
