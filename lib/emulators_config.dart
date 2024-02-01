@@ -4,15 +4,15 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 
 const _authEmulator = 'auth';
 const _firestoreEmulator = 'firestore';
 const _functionsEmulator = 'functions';
 
-final _localIp = InternetAddress.loopbackIPv4;
-
-final _hostAddress = kIsWeb ? 'localhost' : _localIp.address;
+// If you are running the flutter project using non external devices, you can
+// use localhost. If you are using an external device, you can use the IP address
+// of the machine running the emulators.
+const _hostAddress = 'localhost';
 
 /// The expected format of the Firebase Emulators configuration.
 typedef EmulatorsConfig = ({
